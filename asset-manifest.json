@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cv_benoudi/static/css/main.7863965b.css",
+    "main.js": "/cv_benoudi/static/js/main.8e486109.js",
+    "static/media/Benoudi.jpg": "/cv_benoudi/static/media/Benoudi.b7e2b4f93c5d00d5f336.jpg",
+    "index.html": "/cv_benoudi/index.html",
+    "main.7863965b.css.map": "/cv_benoudi/static/css/main.7863965b.css.map",
+    "main.8e486109.js.map": "/cv_benoudi/static/js/main.8e486109.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7863965b.css",
+    "static/js/main.8e486109.js"
+  ]
+}
