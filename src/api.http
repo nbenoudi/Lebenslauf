@@ -1,0 +1,7 @@
+#Get all 
+Get https://localhost:443/login HTTP/1.1
+Content-Type: application/json
+###
+
+GET  https://codepen.io/sgrider/pen/BarEowz HTTP/1.1
+Content-Type: application/json
