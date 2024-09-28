@@ -7,6 +7,7 @@ function Berufstaetigkeit({Headerkey}) {
     useEffect( () => { 
                        const  fetchResult =async ()  =>{
                                          // get tata using axios
+                                         
                                        await axios.get("https://api.jsonbin.io/v3/b/5f96951fbd69750f00c3b098/2",
                                                              { headers:{'X-Access-Key':Headerkey},
                                                              Accept: 'application/json',

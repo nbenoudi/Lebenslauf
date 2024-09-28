@@ -11,6 +11,7 @@ function Contact({Headerkey}) {
     useEffect( () => { 
                        const  fetchResult =async ()  =>{
                                          // get tata using axios
+                                        
                                        await axios.get("https://api.jsonbin.io/v3/b/5f7efefb302a837e9576e10c/4",
                                                              { headers:{'X-Access-Key':Headerkey, 'Access-Control-Allow-Origin':"http://localhost:3000"},
                                                              Accept: 'application/json',
@@ -43,7 +44,6 @@ function Contact({Headerkey}) {
            
          {JSON.stringify({contact}).slice(12,JSON.stringify({contact}).length-2).replace(/['"]+/g, '').split(",").map((item,index)=>{return(<div className="px-10 text-lg p-8 md:p-0 font-medium " key={index}>{item}</div>)})}
          
-        
         </div> );
         
         

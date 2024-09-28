@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { useState,useEffect} from 'react';
 import Error from './Error';
-
 function Praktikum({Headerkey}) {
     const [praktikum,setPraktikum]=useState([]);
     const [error,setError]=useState();
     useEffect( () => { 
                        const  fetchResult =async ()  =>{
                                          // get tata using axios
+                                       
                                        await axios.get("https://api.jsonbin.io/v3/b/5f96a9de076e516c36fb8b5e",
                                                              { headers:{'X-Access-Key':Headerkey},
                                                                Accept: 'application/json',
@@ -72,7 +72,7 @@ function Praktikum({Headerkey}) {
              </tr>
           </tbody>)})}
 
-    </table>
+    </table> 
     </div> 
      );
          

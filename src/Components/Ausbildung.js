@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useState,useEffect} from 'react';
-
+const  timeout=(delay)=> { new Promise( res => setTimeout(res, delay) );}
 function Ausbildung({Headerkey}) {
 
     const [ausbildung,setAusbildung]=useState([]);
     useEffect( () => { 
                        const  fetchResult =async ()  =>{
                                          // get tata using axios
+                                          
                                        await axios.get("https://api.jsonbin.io/v3/b/5f9698e5076e516c36fb8149",
                                                              { headers:{'X-Access-Key':Headerkey},
                                                              Accept: 'application/json',
@@ -20,6 +21,7 @@ function Ausbildung({Headerkey}) {
                                      
                            
                                    }
+                                   timeout(1000);
                                    fetchResult();
                                       
       
@@ -63,7 +65,7 @@ function Ausbildung({Headerkey}) {
             </tr>
          </tbody>)})}
 
-   </table>
+   </table> {() => clearTimeout(timeout)}
    </div> )
         }
 export default Ausbildung
