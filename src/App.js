@@ -28,6 +28,7 @@ const [isValid,setIsValid]=useState(false);
   <Image></Image>
      <Contact Headerkey={keyheader}  />
     <Ausbildung Headerkey={keyheader} />
+    
     <Berufstaetigkeit Headerkey={keyheader} />    
     <Kenntnisse Headerkey={keyheader} /> 
     <Praktikum Headerkey={keyheader} /> 

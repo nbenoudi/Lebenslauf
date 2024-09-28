@@ -11,32 +11,31 @@ function Kenntnisse({Headerkey}) {
                                                              { headers:{'X-Access-Key':Headerkey},
                                                              Accept: 'application/json',
                                                                method:"GET"}).then(async (Result)=>{
-                                                                setKenntnisse(Result.data.record.Kenntnisse);
+
+                                                               await setKenntnisse(Result.data.record.Kenntnisse);
+
                                                                }).catch(async (err)=>{  console.error(err);});
                                                    
                                      
                            
                                    }
-                                   fetchResult();       
+                                   fetchResult();     
+                                  
       
                      },[]);
  
  
-         return <div  className="bg-slate-200 text-black-300">  <div className="text-slate-700 text-sky-800 text-2xl ">Kenntnisse:</div> 
-                   
-                                       {kenntnisse.map((key,index)=>{   return (<div className="text-stone-800	 md:p-1 text-base font-medium" key={index}>
-                                                                          {<li>
-                                                                        {JSON.stringify({key}).slice(8,JSON.stringify({key}).length-2).replace(/['"]+/g, '')}
-                                                                        </li>
-                                                                        
-                                                                        } 
-                                                              </div>);
-                                                  }
-                                      )
-                      }
-                      
-                    
-             </div> ;
+         return  (
+         <div className="text-slate-700 text-sky-800 text-2xl ">Kenntnisse:
+                {kenntnisse.map((key,index)=>{
+                  return(
+                    <div className="bg-blue-200 border-b border-blue-300 dark:text-white" key={index} >
+                  
+                      {JSON.stringify({key}).slice(8,JSON.stringify({key}).length-2).replace(/['"]+/g, '')}
+                      </div>)})}  
+
+            </div> 
+         )
 
 }
 export default Kenntnisse
