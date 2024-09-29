@@ -28,16 +28,19 @@ function Contact({Headerkey}) {
                                      
                            
                                    }
-                                   fetchResult();  
+                                  
+                                   if(contact.length===0 || contact.length===undefined ||ism.length===0 || ism.length===undefined) {const timeoutID=setTimeout(()=>{fetchResult();},3000); 
+                                   return()=>{clearTimeout(timeoutID)};
+                                }  
                                        
                      },[]);
  
         
         if (error) {
-        return(<div className=" bg-red-100 bg-blue-600 px-20 right-1/2 rounded-xl text-2xl w-full" > <Error error={error}>{console.log(error)}</Error> </div>);
+        return(<div className=" bg-red-100  bg-red-600  px-20 right-1/2 rounded-xl text-2xl w-full" > <Error error={error}>{console.log(error)}</Error> </div>);
         }
 
-          return( <div  className=" bg-blue-300  px-20 right-1/2 rounded-xl  w-full">
+          return( <div  className="  bg-slate-700   px-20 right-1/2 rounded-xl text-slate-300 dark:text-slate-50  w-full">
         <FaHandsHelping className='text-lg'>  </FaHandsHelping>        
 
         {  JSON.stringify({ism}).slice(8,JSON.stringify({ism}).length-2).replace(/['"]+/g, '').split(",").map((item,index)=>{return(<div className="px-10 text-lg p-8 md:p-0   font-medium  " key={index}>{item}</div>)})}

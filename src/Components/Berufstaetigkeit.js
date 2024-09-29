@@ -11,7 +11,7 @@ function Berufstaetigkeit({Headerkey}) {
                                        await axios.get("https://api.jsonbin.io/v3/b/5f96951fbd69750f00c3b098/2",
                                                              { headers:{'X-Access-Key':Headerkey},
                                                              Accept: 'application/json',
-                                                               method:"GET"}).then(async (Result)=>{
+                                                               method:"GET"}).then((Result)=>{
                                                                 if (Result) {
                                                                   setBerufstaetigkeit(Result.data.record.Berufstaetigkeit);
                                                                 }
@@ -21,7 +21,13 @@ function Berufstaetigkeit({Headerkey}) {
                                      
                            
                                    }
-                            fetchResult();
+                                  if(berufstaetigkeit.length===0) {const timeoutID=setTimeout(()=>{fetchResult();
+
+                                                                                  },3000); 
+                                                                    return()=>{clearTimeout(timeoutID)};
+
+
+                                   } 
                                    
 
       
@@ -56,20 +62,20 @@ function Berufstaetigkeit({Headerkey}) {
 
        {berufstaetigkeit.map((prakti,index)=>{
          return(<tbody key={index}>
-            <tr className="bg-blue-600 border-b border-blue-400">
-             <th scope="row" className="px-6 py-4 font-medium bg-blue-500 text-blue-50 whitespace-nowrap dark:text-blue-100">
+          <tr className="bg-blue-600 border-b border-blue-400">
+             <th scope="row" className="px-6 py-4 font-medium bg-slate-600 text-slate-300 dark:text-slate-50  whitespace-nowrap ">
                {prakti.Datum_Von}
              </th>
-             <td className="px-6 py-4">
-               {prakti.Datum_Bis}
+             <td className="px-6 py-4 font-medium bg-slate-100 whitespace-nowrap text-slate-600 dark:text-slate-30 ">
+               {prakti.Datum_Bis||"--"}  
              </td>
-             <td className="px-6 py-4 bg-blue-400">
+             <td className="px-6 py-4  text-sm bg-slate-600 text-slate-300 dark:text-slate-50"> 
                {prakti.Als}
              </td>
-             <td className="px-6 py-4"> 
+             <td className="px-6 py-4 text-sm  bg-slate-100 text-slate-600 dark:text-slate-30">
                {prakti.Was}
              </td>
-             <td className="px-6 py-4 bg-blue-400">
+             <td className="px-6 py-4 text-sm  bg-slate-600 text-slate-300 dark:text-slate-50">
                {prakti.In}
              </td>
             </tr>

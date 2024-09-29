@@ -19,7 +19,9 @@ function Kenntnisse({Headerkey}) {
                                      
                            
                                    }
-                                   fetchResult();     
+                                   if(kenntnisse.length===0) {const timeoutID=setTimeout(()=>{fetchResult();},3000); 
+                                       return()=>{clearTimeout(timeoutID)};
+                                    }    
                                   
       
                      },[]);
@@ -29,7 +31,7 @@ function Kenntnisse({Headerkey}) {
          <div className="text-slate-700 text-sky-800 text-2xl ">Kenntnisse:
                 {kenntnisse.map((key,index)=>{
                   return(
-                    <div className="bg-blue-200 border-b border-blue-300 dark:text-white" key={index} >
+                    <div className=" border-b border-blue-300 dark:text-white bg-slate-600 text-slate-300 dark:text-slate-50" key={index} >
                   
                       {JSON.stringify({key}).slice(8,JSON.stringify({key}).length-2).replace(/['"]+/g, '')}
                       </div>)})}  

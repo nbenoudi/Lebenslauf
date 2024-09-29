@@ -22,7 +22,9 @@ function Header({Headerkey}) {
                                     
                           
                                   }
-                                  fetchResult();       
+                                  if(sprachen.length===0 || sonstigues.length===0 ) {const timeoutID=setTimeout(()=>{fetchResult();},3000); 
+                                       return()=>{clearTimeout(timeoutID)};
+                                    }       
      
                     },[]);
 

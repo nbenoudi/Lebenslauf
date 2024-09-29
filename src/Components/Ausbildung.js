@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useState,useEffect} from 'react';
-const  timeout=(delay)=> { new Promise( res => setTimeout(res, delay) );}
 function Ausbildung({Headerkey}) {
 
     const [ausbildung,setAusbildung]=useState([]);
@@ -21,18 +20,19 @@ function Ausbildung({Headerkey}) {
                                      
                            
                                    }
-                                   timeout(1000);
-                                   fetchResult();
+                                   if(ausbildung.length===0) { const timeoutID=setTimeout(()=>{fetchResult();},3000); 
+                                       return()=>{clearTimeout(timeoutID)};
+                                    } 
                                       
       
                      },[]);
  
  
          return( <div className="text-slate-700 text-sky-800 text-2xl "> Ausbildung:
-          <table className="w-full text-sm text-left rtl:text-right dark:text-blue-100">
-       <thead className="text-xs text-white uppercase bg-blue-300 border-b border-blue-400 dark:text-white">
+          <table className="w-full text-sm text-left rtl:text-right text-slate-300 dark:text-slate-50 ">
+       <thead className="text-xs text-white uppercase bg-blue-300 border-b border-blue-400 dark:text-white ">
            <tr>
-               <th scope="col" className="px-6 py-3 bg-blue-300">
+               <th scope="col" className="px-6 py-3 ">
                   Von
                </th>
                <th scope="col" className="px-6 py-3">
@@ -50,22 +50,22 @@ function Ausbildung({Headerkey}) {
        {ausbildung.map((prakti,index)=>{
          return(<tbody key={index}>
             <tr className="bg-blue-600 border-b border-blue-400">
-             <th scope="row" className="px-6 py-4 font-medium bg-blue-600 text-blue-50 whitespace-nowrap dark:text-blue-100">
+             <th scope="row" className="px-6 py-4 font-medium bg-slate-600 text-slate-300 dark:text-slate-50  whitespace-nowrap ">
                {prakti.Datum_Von}
              </th>
-             <td className="px-6 py-4 font-medium bg-blue-500 text-yellow-50 whitespace-nowrap dark:text-blue-100">
+             <td className="px-6 py-4 font-medium bg-slate-100 whitespace-nowrap text-slate-600 dark:text-slate-30 ">
                {prakti.Datum_Bis||"--"}  
              </td>
-             <td className="px-6 py-4 bg-blue-400 text-sm"> 
+             <td className="px-6 py-4  text-sm bg-slate-600 text-slate-300 dark:text-slate-50"> 
                {prakti.Was}
              </td>
-             <td className="px-6 py-4 bg-blue-10 text-yellow-50 text-sm">
+             <td className="px-6 py-4 text-sm  bg-slate-100 text-slate-600 dark:text-slate-30">
                {prakti.In}
              </td>
             </tr>
          </tbody>)})}
 
-   </table> {() => clearTimeout(timeout)}
+   </table>
    </div> )
         }
 export default Ausbildung

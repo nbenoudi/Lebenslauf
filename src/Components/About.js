@@ -21,7 +21,9 @@ function About({Headerkey}){
                                     
                           
                                   }
-                                  fetchResult();       
+                                  if(sprachen.length===0 || sprachen.length===undefined || sonstigues.length===0 || sonstigues.length===undefined ) {const timeoutID=setTimeout(()=>{fetchResult();},3000); 
+                                       return()=>{clearTimeout(timeoutID)};
+                                    }      
      
                     },[]);
                    
@@ -34,7 +36,7 @@ function About({Headerkey}){
             
                           {sprachen.map((sprache,index)=>{
                           return(<tbody key={index}>
-                            <tr className="bg-blue-600 border-b border-blue-400">
+                            <tr className=" border-b border-blue-300 bg-slate-600 text-slate-300 dark:text-slate-50">
                                <td className="px-6 py-4">
                                  {sprache}
                               </td>
@@ -51,7 +53,7 @@ function About({Headerkey}){
                                               {
                                                     return(
                                                             <tbody key={index}>
-                                                                <tr className="bg-blue-600 border-b border-blue-400">
+                                                                <tr className="border-b border-blue-300 bg-slate-600 text-slate-300 dark:text-slate-50">
                                                                   <td className="px-6 py-4">
                                                                   {etwas}
                                                                   </td>
