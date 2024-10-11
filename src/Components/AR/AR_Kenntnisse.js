@@ -28,7 +28,7 @@ function AR_Kenntnisse({Headerkey}) {
  
  
          return  (
-         <div className="text-slate-700 text-sky-800 text-2xl ">المعارف والخبرات:
+         <div className="text-slate-700 text-sky-800 text-2xl text-right ">المعارف والخبرات:
                 {kenntnisse.map((key,index)=>{
                   return(
                     <div className=" border-b border-blue-300 dark:text-white bg-slate-600 text-slate-300 dark:text-slate-50" key={index} >

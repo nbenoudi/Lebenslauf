@@ -47,7 +47,7 @@ function AR_About({Headerkey}){
                     </table>
 
    
-        <div  className="bg-slate-200 text-black-300"> <div className="text-slate-700 text-sky-800 text-2xl ">مهمات أخرى:</div>
+        <div  className="bg-slate-200 text-black-300"> <div className="text-slate-700 text-sky-800  rtl:ml-2 text-2xl ">مهمات أخرى:</div>
         <table className="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100">
                 {sonstigues.map((etwas,index)=>
                                               {
