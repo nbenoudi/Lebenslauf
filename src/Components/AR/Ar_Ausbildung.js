@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { useState,useEffect} from 'react';
-function Ausbildung({Headerkey}) {
+function Ar_Ausbildung({Headerkey}) {
 
     const [ausbildung,setAusbildung]=useState([]);
     useEffect( () => { 
                        const  fetchResult =async ()  =>{
                                          // get tata using axios
-                                     
-                                       await axios.get("https://api.jsonbin.io/v3/b/5f9698e5076e516c36fb8149",
+                                       // language in lang.label and Acceptlang=lang.value;
+                                       await axios.get("https://api.jsonbin.io/v3/b/6707c768e41b4d34e44055b3 ",
                                                              { headers:{'X-Access-Key':Headerkey},
                                                              Accept: 'application/json',
                                                                method:"GET"}).then(async (Result)=>{ if (Result) {
@@ -28,21 +28,21 @@ function Ausbildung({Headerkey}) {
                      },[]);
  
  
-         return( <div className="text-slate-700 text-sky-800 text-2xl "> Ausbildung :
+         return( <div className="text-slate-700 text-sky-800 text-2xl "> التكوين :
           <table className="w-full text-sm text-left rtl:text-right text-slate-300 dark:text-slate-50 ">
        <thead className="text-xs text-white uppercase bg-blue-300 border-b border-blue-400 dark:text-white ">
            <tr>
                <th scope="col" className="px-6 py-3 ">
-                  Von
+                  من
                </th>
                <th scope="col" className="px-6 py-3">
-                   Bis
+                   إلى
                </th>
                <th scope="col" className="px-6 py-3">
-                   Was
+                   المهمة
                </th>
                <th scope="col" className="px-6 py-3">
-                   In
+                   المكان
                </th>
            </tr>
        </thead>
@@ -68,4 +68,4 @@ function Ausbildung({Headerkey}) {
    </table>
    </div> )
         }
-export default Ausbildung
+export default Ar_Ausbildung

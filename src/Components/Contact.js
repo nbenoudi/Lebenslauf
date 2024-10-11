@@ -12,7 +12,7 @@ function Contact({Headerkey}) {
                        const  fetchResult =async ()  =>{
                                          // get tata using axios
                                         
-                                       await axios.get("https://api.jsonbin.io/v3/b/5f7efefb302a837e9576e10c/4",
+                                       await axios.get("https://api.jsonbin.io/v3/b/67095ecdacd3cb34a895424d",
                                                              { headers:{'X-Access-Key':Headerkey, 'Access-Control-Allow-Origin':"http://localhost:3000"},
                                                              Accept: 'application/json',
                                                             
@@ -41,7 +41,7 @@ function Contact({Headerkey}) {
         }
 
           return( <div  className="  bg-slate-700   px-20 right-1/2 rounded-xl text-slate-300 dark:text-slate-50  w-full">
-        <FaHandsHelping className='text-lg'>  </FaHandsHelping>        
+        <FaHandsHelping className='text-lg'> </FaHandsHelping>        
 
         {  JSON.stringify({ism}).slice(8,JSON.stringify({ism}).length-2).replace(/['"]+/g, '').split(",").map((item,index)=>{return(<div className="px-10 text-lg p-8 md:p-0   font-medium  " key={index}>{item}</div>)})}
            
