@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Lebenslauf/static/css/main.233e4d71.css",
+    "main.css": "/Lebenslauf/static/css/main.aad1b658.css",
     "main.js": "/Lebenslauf/static/js/main.6d36668e.js",
     "static/media/Benoudi.jpg": "/Lebenslauf/static/media/Benoudi.b7e2b4f93c5d00d5f336.jpg",
     "index.html": "/Lebenslauf/index.html",
-    "main.233e4d71.css.map": "/Lebenslauf/static/css/main.233e4d71.css.map",
+    "main.aad1b658.css.map": "/Lebenslauf/static/css/main.aad1b658.css.map",
     "main.6d36668e.js.map": "/Lebenslauf/static/js/main.6d36668e.js.map"
   },
   "entrypoints": [
-    "static/css/main.233e4d71.css",
+    "static/css/main.aad1b658.css",
     "static/js/main.6d36668e.js"
   ]
 }
